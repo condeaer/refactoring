@@ -3,6 +3,7 @@ package theater;
 /**
  * Constants used in this program.
  */
+
 public final class Constants {
 
     // volume constants
