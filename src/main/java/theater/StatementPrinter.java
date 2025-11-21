@@ -30,12 +30,12 @@ public class StatementPrinter {
             stringBuilder.append(String.format(
                     "  %s: %s (%s seats)%n",
                     getPlay(performance).getName(),
-                    getFormat(getAmount(performance)),
+                    usd(getAmount(performance)),
                     performance.getAudience()
             ));
         }
         stringBuilder.append(String.format("Amount owed is %s%n",
-                getFormat(getTotalAmount())));
+                usd(getTotalAmount())));
         stringBuilder.append(String.format("You earned %s credits%n", getTotalVolumeCredits()));
         return stringBuilder.toString();
     }
@@ -56,7 +56,7 @@ public class StatementPrinter {
         return result;
     }
 
-    private static String getFormat(int totalAmount) {
+    private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR);
     }
 
