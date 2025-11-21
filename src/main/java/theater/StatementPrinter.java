@@ -22,26 +22,38 @@ public class StatementPrinter {
      * @throws RuntimeException if one of the play types is not known
      */
     public String statement() {
-        int totalAmount = 0;
-        int volumeCredits = 0;
         final StringBuilder stringBuilder = new StringBuilder("Statement for "
                                     + invoice.getCustomer()
                                     + System.lineSeparator());
 
         for (Performance performance : invoice.getPerformances()) {
-
-            // add volume credits
-            volumeCredits += getVolumeCredits(performance);
-
-            // print line for this order
-            stringBuilder.append(String.format("  %s: %s (%s seats)%n", getPlay(performance).getName(),
-                    getFormat(getAmount(performance)), performance.getAudience()));
-            totalAmount += getAmount(performance);
+            stringBuilder.append(String.format(
+                    "  %s: %s (%s seats)%n",
+                    getPlay(performance).getName(),
+                    getFormat(getAmount(performance)),
+                    performance.getAudience()
+            ));
         }
         stringBuilder.append(String.format("Amount owed is %s%n",
-                getFormat(totalAmount)));
-        stringBuilder.append(String.format("You earned %s credits%n", volumeCredits));
+                getFormat(getTotalAmount())));
+        stringBuilder.append(String.format("You earned %s credits%n", getTotalVolumeCredits()));
         return stringBuilder.toString();
+    }
+
+    private int getTotalAmount() {
+        int result = 0;
+        for (Performance performance : invoice.getPerformances()) {
+            result += getAmount(performance);
+        }
+        return result;
+    }
+
+    private int getTotalVolumeCredits() {
+        int result = 0;
+        for (Performance performance : invoice.getPerformances()) {
+            result += getVolumeCredits(performance);
+        }
+        return result;
     }
 
     private static String getFormat(int totalAmount) {
