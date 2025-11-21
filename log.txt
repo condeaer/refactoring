@@ -114,3 +114,22 @@ b545fe2 clarifying extracted method names in README.md
 a0124c9 fixing starter file
 c8d9d38 adding starter files
 cbe4517 first commit
+
+3e5c453 (HEAD -> main, origin/main, origin/HEAD) completed Task 2.4
+f7868d6 completed Task 2.3
+3fda6ec updated log for Task 2.2
+046b83a completed Task 2.1 (prev commit), just completed Task 2.2 (current commit)
+5263ce9 completed Task 2.2
+0cd89d1 fixed another minor mistake in Task 1.1
+86c1beb fixed minor mistake in Task 1.1
+a4df6bd complete Task 1.2
+104190c Merge remote-tracking branch 'origin/main'
+05e66f1 complete Task 1.1 (capital lol)
+4b5cb89 complete task 1.1
+a7647f6 complete task 1.1
+2b4f164 fixed tests for the not-for-credit tasks; parameter ordering and ensuring consistent line endings.
+ff5004e adding shortcut keys for Inline Variable (Re: Piazza question)
+b545fe2 clarifying extracted method names in README.md
+a0124c9 fixing starter file
+c8d9d38 adding starter files
+cbe4517 first commit
